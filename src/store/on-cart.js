@@ -5,10 +5,6 @@ const onCartInitValue = {
   totalItems: 0,
 }
 
-function totalCart (theItem) {
-  // theItem.
-}
-
 const onCartSlice = createSlice({
   name: 'onCartSlice',
   initialState: onCartInitValue,
