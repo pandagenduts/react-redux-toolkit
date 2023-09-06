@@ -10,12 +10,9 @@ let firstInit = true;
 
 function App() {
   const { isShowCart, theNotification } = useSelector(state => state.theUI)
-  const { cartDataChanged } = useSelector(state => state.onCart)
   const wholeCartData = useSelector(state => state.onCart)
 
   const dispatch = useDispatch();
-
-  // console.log(firstFetch);
 
   useEffect(() => {
     dispatch(fetchFromFirebase())
@@ -27,7 +24,7 @@ function App() {
       return;
     }
 
-    if (cartDataChanged) {
+    if (wholeCartData.cartDataChanged) {
       dispatch(cartToFirebase(wholeCartData))
     }
 
