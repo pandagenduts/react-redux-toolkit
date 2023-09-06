@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchFromFirebase())
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (firstInit) {
@@ -31,7 +31,7 @@ function App() {
       dispatch(cartToFirebase(wholeCartData))
     }
 
-  }, [wholeCartData])
+  }, [wholeCartData, dispatch])
 
   return (
     <>
